@@ -24,7 +24,6 @@ basic.forever(function () {
         basic.pause(5000)
         servos.P1.setAngle(0)
         servos.P2.setAngle(180)
-        오류저장 = 1
         basic.pause(5000)
     }
 })
@@ -35,5 +34,6 @@ basic.forever(function () {
 basic.forever(function () {
     if (오류저장 == 1 && 깨끗한_빗물_측정 >= 90) {
         OLED.writeStringNewLine("Completed removing clean rainwater")
+        오류저장 = 1
     }
 })
