@@ -1,13 +1,8 @@
-input.onButtonPressed(Button.A, function () {
-    basic.showNumber(초기_우수량)
-    basic.pause(200)
-    basic.clearScreen()
-})
-let 초기_우수량 = 0
-OLED.init(128, 64)
 let 깨끗한_빗물_측정 = 0
-초기_우수량 = 0
 let 오류저장 = 0
+OLED.init(128, 64)
+let 초기_우수량 = 0
+초기_우수량 = 0
 basic.pause(100)
 servos.P1.setAngle(0)
 servos.P2.setAngle(180)
@@ -33,7 +28,8 @@ basic.forever(function () {
 })
 basic.forever(function () {
     if (오류저장 == 1 && 깨끗한_빗물_측정 >= 90) {
+        basic.pause(100000)
         OLED.writeStringNewLine("Completed removing clean rainwater")
-        오류저장 = 1
+        오류저장 = 0
     }
 })
