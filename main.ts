@@ -16,22 +16,20 @@ basic.forever(function () {
     깨끗한_빗물_측정 = Environment.ReadWaterLevel(AnalogPin.P5)
 })
 basic.forever(function () {
-    if (0 == 0) {
-        OLED.writeStringNewLine("Starting to collect dirty rainwater")
-        basic.pause(200)
-        if (오류저장 == 0 && 초기_우수량 >= 60) {
-            OLED.writeStringNewLine("Trash dirty rainwater which it collected")
-            basic.pause(1000)
-            servos.P1.setAngle(135)
-            servos.P2.setAngle(135)
-            basic.pause(5000)
-            OLED.writeStringNewLine("completed removing dirty rainwater. Collecting new rainwater...")
-            basic.pause(5000)
-            servos.P1.setAngle(0)
-            servos.P2.setAngle(0)
-            오류저장 = 1
-            basic.pause(5000)
-        }
+    OLED.writeStringNewLine("Starting to collect dirty rainwater")
+    basic.pause(200)
+    if (오류저장 == 0 && 초기_우수량 >= 60) {
+        OLED.writeStringNewLine("Trash dirty rainwater which it collected")
+        basic.pause(1000)
+        servos.P1.setAngle(135)
+        servos.P2.setAngle(135)
+        basic.pause(5000)
+        OLED.writeStringNewLine("completed removing dirty rainwater. Collecting new rainwater...")
+        basic.pause(5000)
+        servos.P1.setAngle(0)
+        servos.P2.setAngle(0)
+        오류저장 = 1
+        basic.pause(5000)
     }
 })
 basic.forever(function () {
