@@ -14,7 +14,7 @@ servos.P2.setAngle(180)
 basic.forever(function () {
     OLED.writeStringNewLine("Starting to collect dirty rainwater")
     basic.pause(200)
-    if (오류저장 == 0 && 초기_우수량 >= 60) {
+    if (오류저장 == 0 && 초기_우수량 >= 6) {
         OLED.writeStringNewLine("Trash dirty rainwater which it collected")
         basic.pause(1000)
         servos.P1.setAngle(135)
